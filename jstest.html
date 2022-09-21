@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <head>
+    <script>
+        function add(a1,b1){
+            let c =  parseInt(a1)+ parseInt(b1)
+            document.getElementById("out").innerHTML=c
+
+            
+        }
+        function randomColor() {
+            var c = "#";
+            for (var i = 0; i < 6; i++) {
+                c += (Math.random() * 16 |0).toString(16);
+            } 
+            return c;
+        }
+        function setColor(){
+            
+            var a = document.getElementById("out").style;
+            a.color = randomColor()
+        }
+        
+    </script>
 
 </head>
 <body>
+    <input type="number" id="a" value="24"style="text-align: center;">
+    <input type="number" id="b" value="26"style="text-align: center;">
+    <br>
+    <button type="button"style="text-align: center;width=200px;padding: 8px 64px" onclick="add(a.value,b.value), setColor();" >
+        ???
+    </button>
+    <br>
+    <h1 id="out" style="font-size: 200px;text-align: center;">
+        ?
+    </h1>
     <script>
-        function add(a1,b1){
-            let c = Math.min(a1,b1)
-            console.log(c)
-        }
+        var x =  parseInt(document.getElementById("a").value)+ parseInt(document.getElementById("b").value)
+        document.getElementById("out").innerHTML=x
+        setColor()
     </script>
-    <input type="number" id="a" value="25">
-    <input type="number" id="b" value="25">
-    <input type="button" value="12" onclick="add(a.value,b.value)">
+
 </body>
